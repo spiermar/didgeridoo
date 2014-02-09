@@ -10,6 +10,13 @@ var beacon = require('./routes/beacon');
 var http = require('http');
 var path = require('path');
 
+// Load configurations
+// Set the node enviornment variable if not set before
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+// Initializing system variables 
+var config = require('./config/config');
+
 var app = express();
 
 // all environments
