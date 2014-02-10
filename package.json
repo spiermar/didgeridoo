@@ -9,7 +9,8 @@
     "express": "3.4.8",
     "jade": "*",
     "nano": "4.4.0",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "ua-parser": "0.3.3"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
