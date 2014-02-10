@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+	body
+		p(id='results')
+		script(type='text/javascript', src='javascripts/boomerang.min.js')
+		script(type='text/javascript', src='javascripts/example.js')
+		script(type='text/javascript').
+			BOOMR.init({
+				beacon_url: "http://localhost:3000/beacon/example",
+				site_domain: "example.com",
+				user_ip: "#{remoteAddress}",
+				BW: {
+					base_url: "http://localhost:3000/images/",
+					cookie: 'BOOMR-BW'
+				},
+				RT: {
+					cookie: 'BOOMR-RT'
+				}
+			});

@@ -12,12 +12,11 @@ var nano = require('nano')(config.db.url);
 var db = nano.use(config.db.name);
 
 exports.get = function(req, res){
-	
-	db.insert(req.query, function(err, body, header) {
+	db.insert({ 'timestamp': new Date().getTime(), 'view': req.params.view, 'ip': req.connection.remoteAddress, 'boomerang': req.query }, function(err, body, header) {
 		if (err) {
 			console.log('[db.insert] ', err.message);
 			return;
 		}
-    });
+	});
 	res.send();
 };
