@@ -10,7 +10,8 @@
     "jade": "*",
     "nano": "4.4.0",
     "lodash": "~2.4.1",
-    "ua-parser": "0.3.3"
+    "ua-parser": "0.3.3",
+    "underscore": "1.6.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

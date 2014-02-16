@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 		uglify: {
 			my_target: {
 				files: {
-					'public/javascripts/boomerang.min.js': ['boomerang/boomerang.js', 'boomerang/plugins/rt.js', 'boomerang/plugins/bw.js', 'boomerang/plugins/navtiming.js']
+					// 'public/javascripts/boomerang.min.js': ['boomerang/boomerang.js', 'boomerang/plugins/rt.js', 'boomerang/plugins/bw.js', 'boomerang/plugins/navtiming.js']
+					'public/javascripts/boomerang.min.js': ['boomerang/boomerang.js', 'boomerang/plugins/rt.js']
 				}
 			}
 		}

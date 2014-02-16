@@ -39,7 +39,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/beacon/:view', beacon.get);
+app.get('/beacon/:view/beacon.gif', beacon.get);
 app.get('/beacon', beacon.get);
 app.get('/example', example.get);
 
