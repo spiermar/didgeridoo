@@ -16,3 +16,5 @@ node_modules
 
 config/env/development.js
 config/env/production.js
+
+.DS_Store
