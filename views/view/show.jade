@@ -1,0 +1,42 @@
+extends ../layout
+
+block header
+  script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+  script(type='text/javascript', src='http://code.highcharts.com/highcharts.js')
+
+block content
+  h1= title
+  p #{view}
+  div(id="t_done" style="min-width: 310px; height: 400px; margin: 0 auto")
+  script(type='text/javascript').
+    $(function () {
+      var options = {
+        chart: {
+            renderTo: 't_done',
+            type: 'spline'
+        },
+        title: {
+          text: 'Perceived load time of the page'
+        },
+        xAxis: {
+                type: 'datetime'
+        },
+        yAxis: {
+          title: {
+            text: 'Time Taken (ms)'
+          },
+          min: 0
+        },
+        tooltip: {
+          valueSuffix: 'ms'
+        },
+        legend: {
+          enabled: false
+        },
+        series: [{}]
+      };
+      $.getJSON('http://localhost:3000/api/t_done', function(data) {
+        options.series[0].data = data;
+        var chart = new Highcharts.Chart(options);
+      });
+    });
