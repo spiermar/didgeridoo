@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var beacon = require('./routes/beacon');
 var example = require('./routes/example');
+var t_done = require('./routes/t_done');
 var http = require('http');
 var path = require('path');
 
@@ -42,6 +43,7 @@ app.get('/users', user.list);
 app.get('/beacon/:view/beacon.gif', beacon.get);
 app.get('/beacon', beacon.get);
 app.get('/example', example.get);
+app.get('/t_done', t_done.get);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
